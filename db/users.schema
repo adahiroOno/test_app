@@ -1,0 +1,13 @@
+create_table "users", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", comment: "ユーザー" do |t|
+  t.string "account_id",limit: 15, null: false
+  t.boolean "sex", null: false
+  t.text "description"
+  t.string "profile_img"
+  t.string "twitter_url"
+  t.string "insta_url"
+  t.string "email", limit: 191, default: "", null: false
+  t.string "last_sign_in_ip", limit: 191
+  t.datetime "updated_at", null: false
+  t.datetime "created_at", null: false
+  t.timestamps null: false
+end

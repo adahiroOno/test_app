@@ -1,0 +1,9 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+require 'users.schema'
+require 'comments.schema'
+require 'favorites.schema'
+require 'follows.schema'
+require 'notifications.schema'
+require 'post_categories.schema'
+require 'posts.schema'
