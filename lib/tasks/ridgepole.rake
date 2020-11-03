@@ -1,8 +1,14 @@
 # bundle exec rake ridgepole:apply
 namespace :ridgepole do
   desc "Apply ridgepole schemafile"
+  # DB定義変更
   task apply: :environment do
-    ridgepole('--apply')
+    ridgepole
+  end
+
+  # ALTER文確認
+  task dry_run: :environment do
+    ridgepole('--dry-run')
   end
 
   desc "Export ridgepole schemafile"
@@ -24,7 +30,7 @@ namespace :ridgepole do
   end
 
   def ridgepole(*options)
-    command = ['bundle exec ridgepole --file db/Schemafile', "-c #{config_file}", "-E #{Rails.env}"]
+    command = ['bundle exec ridgepole --file Schemafile', "-c #{config_file}", "-E #{Rails.env} --apply"]
     system (command + options).join(' ')
   end
 end
