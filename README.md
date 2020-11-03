@@ -23,7 +23,7 @@ Things you may want to cover:
 
 * ...
 
-##管理画面##
+## 管理画面
 staging
 https://hotysm-trip-backend-staging.herokuapp.com/admin
 
