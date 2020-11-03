@@ -1,0 +1,7 @@
+create_table "posts", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", comment: "投稿" do |t|
+  t.text "content"
+  t.bigint "user_id"
+  t.datetime "updated_at", null: false
+  t.datetime "created_at", null: false
+  t.timestamps null: false
+end

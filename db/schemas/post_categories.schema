@@ -1,0 +1,6 @@
+create_table "post_categories", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", comment: "投稿カテゴリ" do |t|
+  t.text "label", null: false
+  t.datetime "updated_at", null: false
+  t.datetime "created_at", null: false
+  t.timestamps null: false
+end

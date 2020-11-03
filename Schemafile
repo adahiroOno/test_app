@@ -1,0 +1,1 @@
+Dir.glob("db/schemas/*.schema").each { |f| require f }
