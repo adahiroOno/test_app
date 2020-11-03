@@ -1,8 +1,8 @@
 # ref https://hit.hateblo.jp/entry/2016/05/09/131806
 
 create_table "follows", id: :bigint, unsigned: true, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", comment: "フォロー・フォロワ-" do |t|
-  t.bigint "user_id", null: false # フォローを行ったユーザー
-  t.bigint "follow_id", null: false # フォローされたユーザー
+  t.bigint "user_id", null: false, comment: "フォローを行ったユーザー"
+  t.bigint "follow_id", null: false, comment: "フォローされたユーザー"
   t.datetime "updated_at", null: false
   t.datetime "created_at", null: false
   t.timestamps null: false
