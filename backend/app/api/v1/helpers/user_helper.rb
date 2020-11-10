@@ -6,7 +6,7 @@ module V1
         User.find_by(id: user_id)
       end
 
-      def exact_user?(user)
+      def exist_user?(user)
        error!({error: 'user not found'}) if user.blank?
       end
     end

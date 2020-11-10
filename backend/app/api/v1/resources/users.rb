@@ -37,7 +37,7 @@ class V1::Resources::Users < Grape::API
     patch ':id/update' do
       ActiveRecord::Base.transaction do
         user = find_user(params[:id])
-        exact_user?(user)
+        exist_user?(user)
         if user.update!(declared(params, include_missing: false))
          {success: :true}
         else
@@ -49,7 +49,7 @@ class V1::Resources::Users < Grape::API
     desc 'ユーザー削除'
     delete ':id/delete' do
       user = find_user(params[:id])
-      exact_user?(user)
+      exist_user?(user)
       if user.destroy
         {success: :true}
       else
@@ -65,7 +65,7 @@ class V1::Resources::Users < Grape::API
     desc 'ユーザー1件取得'
     get ':id' do
       user = find_user(params[:id])
-      exact_user?(user)
+      exist_user?(user)
       present user, with: V1::Entities::UserEntity
     end
   end
