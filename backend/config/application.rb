@@ -19,6 +19,7 @@ module MuscleApi
     # the framework and any gems in your application.
     config.paths.add File.join('app', 'api'), glob: File.join('**', '*.rb')
     config.autoload_paths += Dir[Rails.root.join('app', 'api', '*')]
+    config.autoload_paths += Dir[Rails.root.join('app', 'uploaders')] 
 
     config.middleware.insert_before 0, Rack::Cors do
       allow do
