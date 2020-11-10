@@ -18,7 +18,7 @@ namespace :ridgepole do
 
   private
   def config_file
-    if Rails.env.development?
+    if Rails.env.development? || Rails.env.test?
       'config/database.yml'
     elsif Rails.env.staging?
       'config/database.staging.yml'
