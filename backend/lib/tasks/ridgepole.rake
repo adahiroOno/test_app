@@ -17,20 +17,8 @@ namespace :ridgepole do
   end
 
   private
-  def config_file
-    if Rails.env.development? || Rails.env.test?
-      'config/database.yml'
-    elsif Rails.env.staging?
-      'config/database.staging.yml'
-    elsif Rails.env.production?
-      'config/database.production.yml'
-    else
-      raise 'no configuration specified'
-    end
-  end
-
   def ridgepole(*options)
-    command = ['bundle exec ridgepole --file Schemafile', "-c #{config_file}", "-E #{Rails.env} --apply"]
+    command = ['bundle exec ridgepole --file Schemafile', "-c config/database.yml", "-E #{Rails.env} --apply"]
     system (command + options).join(' ')
   end
 end
